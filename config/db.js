@@ -6,7 +6,6 @@ const DB_URL = process.env.DB_MONGO
 const conectionDB = () => {
     return mongoose.connect(DB_URL, {
         useNewUrlParser: true,
-        useUnifiedTopology: true,
         useFindAndModify: false,
         useCreateIndex: true
     }, err => {
