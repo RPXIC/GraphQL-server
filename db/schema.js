@@ -37,7 +37,7 @@ const typeDefs = gql`
             """Create user"""
         register(input: UserInput!): User
             """Authenticate user"""
-        login(input: AuthenticateInput!): Token
+        authenticate(input: AuthenticateInput!): Token
             """Add or delete from favorite list"""
         toggleFav(input: FavInput!): [String]!
     }

@@ -44,7 +44,7 @@ const resolvers = {
                 console.log(error)
             }
         },
-        login: async (_, { input }) => {
+        authenticate: async (_, { input }) => {
             const { username, password } = input
 
             const user = await User.findOne({username})
