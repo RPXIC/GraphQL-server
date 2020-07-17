@@ -14,9 +14,8 @@ conectionDB()
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    engine: {    
-        reportSchema: true
-    },
+    introspection: true,
+    playground: true,
     context: ({req}) => {
         const token = req.headers['authorization'] || ''
         if (token) {
