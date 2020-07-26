@@ -55,7 +55,7 @@ const resolvers = {
 
             if (!correctPassword) throw new Error('Incorrect credentials')
             
-            return  {token: createToken(user, process.env.SECRET, '24h')}
+            return { token: createToken(user, process.env.SECRET, '24h'), user }
         },
         toggleFav: async (_, { input }, ctx) => {
             const { username } = ctx

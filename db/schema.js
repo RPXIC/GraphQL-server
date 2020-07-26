@@ -3,12 +3,13 @@ const { gql } = require('apollo-server')
 const typeDefs = gql`
 
     type User {
-        id: ID
-        username: String
-        created: String
+        id: ID!
+        username: String!
+        created: String!
     }
 
-    type Token {
+    type UserAuth {
+        user: User!
         token: String!
     }
 
@@ -35,9 +36,9 @@ const typeDefs = gql`
 
     type Mutation {
             """Create user"""
-        register(input: UserInput!): User
+        register(input: UserInput!): String
             """Authenticate user"""
-        authenticate(input: AuthenticateInput!): Token
+        authenticate(input: AuthenticateInput!): UserAuth!
             """Add or delete from favorite list"""
         toggleFav(input: FavInput!): [String]!
     }
