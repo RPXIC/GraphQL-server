@@ -39,7 +39,7 @@ const resolvers = {
             try {
                 const user = new User(input)
                 user.save()
-                return sanitize(user)
+                return true
             } catch (error) {
                 console.log(error)
             }
